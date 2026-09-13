@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ceremonia de la Luz · Enfermería Unipamplona</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Pinyon+Script&family=Montserrat:wght@400;500;600;700&display=swap');
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#eaf4fb;color:#2c4a5e;font-family:Montserrat,Arial,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.07;background-image:radial-gradient(circle,#1786bb 1px,transparent 1px);background-size:28px 28px}
+
+/* ---------- HERO / INVITATION CARD ---------- */
+.hero{min-height:100svh;position:relative;display:flex;align-items:center;justify-content:center;padding:40px 15px;overflow:hidden;
+  background:#eef2ea url('bg-flores.jpg') center / cover no-repeat;}
+.hero .petalDeco{display:none}
+
+.card{position:relative;z-index:2;width:min(560px,100%);padding:38px 26px 42px;text-align:center;
+  background:rgba(255,255,255,.94);border-radius:34px;
+  box-shadow:0 25px 70px rgba(19,91,125,.18);backdrop-filter:blur(6px)}
+.frameLine{font-size:15px;letter-spacing:3px;color:#0c6690;opacity:.75;margin:2px 0 4px}
+.logosRow{margin:14px auto 6px;max-width:340px}
+.logosRow img{width:100%;height:auto;display:block}
+.brandline{font-size:10px;letter-spacing:2.5px;color:#5f7d8f;text-transform:uppercase;margin-top:8px}
+
+h1.title{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:600;color:#0c5c85;
+  font-size:clamp(30px,7vw,40px);margin:18px 0 0}
+h1.title .luz{display:block;font-family:"Pinyon Script",cursive;font-style:normal;font-size:clamp(56px,15vw,84px);
+  color:#0a4f75;line-height:1;margin-top:6px}
+
+.invite-text{max-width:430px;margin:22px auto 0;font-style:italic;color:#4c6b7d;font-size:14.5px;line-height:1.85}
+
+.eventRow{display:flex;align-items:center;justify-content:center;gap:16px;margin:26px 0;flex-wrap:wrap}
+.eventRow .divv{width:1px;align-self:stretch;background:#bcdaea;display:none}
+.eventRow .datebox{font-family:"Playfair Display",serif;font-style:italic;color:#0c6690}
+.eventRow .datebox b{display:block;font-size:26px;font-style:normal}
+.eventRow .place{font-size:12.5px;color:#4c6b7d;line-height:1.5;max-width:190px}
+.eventRow .place b{color:#0c5c85}
+.eventRow .time{font-family:"Playfair Display",serif;font-style:italic;font-size:20px;color:#0c6690}
+@media(min-width:480px){.eventRow .divv{display:block}}
+
+.quote{max-width:420px;margin:8px auto 0;font-style:italic;color:#3d5b6d;font-size:14px;line-height:1.7}
+.quote b{display:block;margin-top:6px;font-style:normal;font-weight:600;color:#0c5c85;font-size:12.5px;letter-spacing:.5px}
+
+.joyline{margin-top:22px;font-family:"Playfair Display",serif;font-style:italic;color:#0c6690;font-size:19px}
+
+.btn{display:inline-block;margin-top:26px;padding:14px 26px;border-radius:99px;background:#0c6690;color:white;
+  text-decoration:none;font-weight:700;font-size:13.5px;box-shadow:0 10px 26px rgba(12,102,144,.28);animation:pulse 3s infinite;
+  border:none;cursor:pointer;font-family:Montserrat,Arial,sans-serif}
+
+/* ---------- SECTIONS ---------- */
+section{padding:70px 16px;position:relative;overflow:hidden}
+section:before{content:"❀";position:absolute;left:-10px;top:10px;font-size:60px;color:#4f9fc9;opacity:.10;transform:rotate(-12deg)}
+section:after{content:"❀";position:absolute;right:-10px;bottom:10px;font-size:60px;color:#4f9fc9;opacity:.10;transform:rotate(15deg)}
+.inner{max-width:980px;margin:auto;text-align:center;position:relative;z-index:1}
+.kicker{color:#1181b6;text-transform:uppercase;letter-spacing:3px;font-size:10px;font-weight:700}
+h2{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:600;font-size:38px;color:#0c5c85;margin:8px 0}
+.divider{width:56px;height:2px;background:#e8bd52;margin:16px auto 32px;border-radius:10px}
+.text{max-width:640px;margin:auto;line-height:1.85;color:#4c6b7d;font-size:15px}
+
+.details{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:30px}
+.box{padding:26px 17px;background:#fff;border:1px solid #d9ebf4;border-radius:23px;box-shadow:0 10px 30px rgba(20,90,130,.08)}
+.icon{font-size:30px}
+.box strong{display:block;color:#0c5c85;font-size:13px;letter-spacing:1px;margin:9px 0 7px}
+.box span{font-size:13px;line-height:1.6;color:#5f7d8f}
+
+.count{max-width:900px;margin:auto;padding:40px 17px;border-radius:30px;background:linear-gradient(145deg,#0c5c85,#1a8fc3);
+  color:white;box-shadow:0 20px 50px rgba(12,90,130,.22);position:relative;overflow:hidden}
+.count h2{color:#fff}
+.countdown{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;position:relative;z-index:1}
+.time{min-width:82px;padding:14px 6px;border-radius:16px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25)}
+.time b{display:block;font-size:27px}
+.time small{font-size:9px;letter-spacing:1.5px}
+
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
+figure{margin:0;background:#fff;padding:9px;border-radius:24px;box-shadow:0 12px 32px rgba(20,90,130,.1)}
+figure img{width:100%;height:340px;object-fit:cover;object-position:center 20%;border-radius:17px;display:block}
+figcaption{padding:10px 4px 3px;font-size:12px;color:#5f7d8f}
+@media(max-width:680px){.gallery{grid-template-columns:1fr}figure img{height:280px}}
+
+.meaning{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:30px}
+.item{background:#f1f9fd;padding:26px 17px;border-radius:23px}
+.item b{display:block;color:#0c5c85;margin:10px 0 7px}
+.item p{font-size:13px;line-height:1.7;color:#5f7d8f;margin:0}
+
+.gift{max-width:640px;margin:30px auto 0;background:linear-gradient(145deg,#fff,#eef8fd);padding:34px 22px;border-radius:26px;border:1px solid #d9ebf4}
+.giftIcon{font-size:52px;animation:bob 2.8s infinite}
+.giftTitle{font-family:"Playfair Display",serif;font-style:italic;color:#0c5c85;font-size:26px;margin:8px 0 10px}
+
+.location{margin-top:28px;background:#fff;padding:30px;border-radius:26px;border:1px solid #d9ebf4;box-shadow:0 10px 30px rgba(20,90,130,.08)}
+.wa{background:#178b74}
+
+@media(max-width:700px){.details,.meaning{grid-template-columns:1fr}h2{font-size:32px}section{padding:56px 14px}}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.show{opacity:1;transform:none}
+#contenido{display:none}
+#contenido.open{display:block;animation:fadeIn .6s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.petal{position:fixed;top:-40px;z-index:50;pointer-events:none;animation:fall linear forwards;opacity:.7}
+footer{padding:44px 20px;background:#0a4f75;color:white;text-align:center}
+@keyframes sway{50%{transform:rotate(3deg) translateY(-5px)}}
+@keyframes pulse{50%{box-shadow:0 13px 32px rgba(12,102,144,.4)}}
+@keyframes bob{50%{transform:translateY(-7px) rotate(2deg)}}
+@keyframes fall{to{transform:translate3d(70px,110vh,0) rotate(360deg);opacity:0}}
+</style></head>
+<body>
+
+<header class="hero">
+  <span class="petalDeco p1">❀</span><span class="petalDeco p2">❀</span><span class="petalDeco p3">❀</span>
+  <div class="card">
+    <div class="frameLine">⟨ ❧ ───── ✾ ───── ❧ ⟩</div>
+    <div class="logosRow"><img src="logos.jpg" alt="Universidad de Pamplona · Acreditación de alta calidad · EQUAA · Facultad de Salud · Enfermería Unipamplona"></div>
+    <div class="brandline">Universidad de Pamplona · Facultad de Salud · Enfermería</div>
+
+    <h1 class="title">Ceremonia de la<span class="luz">Luz</span></h1>
+
+    <p class="invite-text">Nos complace invitarte a compartir con nosotros el inicio de esta nueva
+      etapa en nuestra Ceremonia de la Luz, un momento que representa nuestra vocación,
+      nuestro amor por la Enfermería y el compromiso de cuidar vidas.</p>
+
+    <div class="eventRow">
+      <div class="datebox">02<br><b>OCT</b></div>
+      <div class="divv"></div>
+      <div class="place"><b>Auditorio Jossimar Calvo</b><br>Sede Villa del Rosario</div>
+      <div class="divv"></div>
+      <div class="time">1:00 p.&nbsp;m.</div>
+    </div>
+
+    <p class="quote">“Le debo mi éxito a esto: nunca di ni acepté ninguna excusa”
+      <b>Florence Nightingale</b></p>
+
+    <p class="joyline">¡Te esperamos con mucha alegría!</p>
+
+    <button type="button" class="btn" onclick="mostrarDetalles()">Ver detalles del evento ✨</button>
+    <div class="frameLine" style="margin-top:22px">⟨ ❧ ───── ✾ ───── ❧ ⟩</div>
+  </div>
+</header>
+
+<div id="contenido">
+
+<section id="evento" class="reveal"><div class="inner">
+  <div class="kicker">Una ocasión especial</div><h2>Te esperamos</h2><div class="divider"></div>
+  <p class="text">Queremos compartir contigo un momento significativo de nuestra formación como
+    profesionales de Enfermería. Tu presencia hará parte de este recuerdo.</p>
+  <div class="details">
+    <div class="box"><div class="icon">📅</div><strong>FECHA</strong><span>Viernes<br><b>2 de octubre de 2026</b></span></div>
+    <div class="box"><div class="icon">🕑</div><strong>HORA</strong><span><b>1:00 p. m.</b><br>Te recomendamos llegar con anticipación.</span></div>
+    <div class="box"><div class="icon">📍</div><strong>LUGAR</strong><span><b>Auditorio Jossimar Calvo</b><br>Sede Villa del Rosario</span></div>
+  </div>
+</div></section>
+
+<section class="reveal"><div class="inner">
+  <div class="count">
+    <div class="kicker" style="color:#d9f4ff">Falta poco</div><h2>Cuenta regresiva</h2><div class="divider"></div>
+    <div class="countdown" id="countdown"></div>
+  </div>
+</div></section>
+
+<section class="reveal"><div class="inner">
+  <div class="kicker">Nuestra historia</div><h2>Momentos que nos unen</h2><div class="divider"></div>
+  <p class="text">Un recuerdo de quienes han recorrido juntos este camino de aprendizaje, esfuerzo y vocación. 🩺🤍</p>
+  <div class="gallery">
+    <figure><img src="foto1.jpg" alt="Estudiantes de Enfermería Unipamplona"><figcaption>Nuestro grupo de Enfermería</figcaption></figure>
+    <figure><img src="foto2.jpg" alt="Estudiantes de Enfermería Unipamplona"><figcaption>Compañeros de camino</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="reveal"><div class="inner">
+  <div class="kicker">El significado de nuestra luz</div><h2>Vocación que ilumina</h2><div class="divider"></div>
+  <div class="meaning">
+    <div class="item"><div style="font-size:30px">🕯️</div><b>Compromiso</b><p>Cuidar con responsabilidad, conocimiento y humanidad.</p></div>
+    <div class="item"><div style="font-size:30px">🤍</div><b>Humanidad</b><p>Servir con empatía, dignidad y sensibilidad.</p></div>
+    <div class="item"><div style="font-size:30px">🩺</div><b>Vocación</b><p>Una profesión dedicada al cuidado y al servicio.</p></div>
+  </div>
+</div></section>
+
+<section class="reveal"><div class="inner">
+  <div class="kicker">Un detalle con cariño</div><h2>¿Regalos?</h2><div class="divider"></div>
+  <div class="gift"><div class="giftIcon">🎁</div><div class="giftTitle">Tu presencia es nuestro mejor regalo</div>
+    <p>Si deseas tener un detalle con nosotros, puedes hacerlo con mucho cariño. Lo más importante
+      es compartir juntos este día tan especial. 🤍🩵</p></div>
+</div></section>
+
+<section class="reveal"><div class="inner">
+  <div class="kicker">Encuéntranos</div><h2>Auditorio Jossimar Calvo</h2><div class="divider"></div>
+  <div class="location"><div style="font-size:36px">📍</div><b style="color:#0c5c85">Sede Villa del Rosario</b>
+    <p class="text">Consulta la ruta para llegar al lugar de la ceremonia.</p>
+    <a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Auditorio%20Jossimar%20Calvo%20Villa%20del%20Rosario%20Norte%20de%20Santander">📍 Abrir ubicación</a>
+  </div>
+</div></section>
+
+<section class="reveal"><div class="inner">
+  <div class="kicker">Tu presencia cuenta</div><h2>¿Nos acompañas?</h2><div class="divider"></div>
+  <p class="text">Será un honor compartir contigo este momento tan especial de nuestra formación.</p>
+  <a class="btn wa" target="_blank" href="https://wa.me/573112069542?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20Ceremonia%20de%20Luz%20de%20Enfermer%C3%ADa%20del%202%20de%20octubre%20de%202026.">💬 Confirmar asistencia por WhatsApp</a>
+</div></section>
+
+</div>
+
+<footer>
+  <div style="font-size:28px">🕯️ 🌸 🩺 🤍</div>
+  <p><b>Ceremonia de la Luz · Enfermería</b></p>
+  <p>2 de octubre de 2026 · 1:00 p. m.</p>
+  <p style="font-size:11px;opacity:.75">Estudiantes de Enfermería · Universidad de Pamplona</p>
+</footer>
+
+<script>
+const target=new Date("2026-10-02T13:00:00-05:00").getTime();
+function tick(){
+  let d=target-Date.now(), e=document.getElementById("countdown");
+  if(d<=0){e.innerHTML='<div class="time"><b>✨</b><small>¡LLEGÓ EL GRAN DÍA!</small></div>';return}
+  let D=Math.floor(d/86400000), H=Math.floor(d%86400000/3600000), M=Math.floor(d%3600000/60000), S=Math.floor(d%60000/1000);
+  e.innerHTML=`<div class="time"><b>${D}</b><small>DÍAS</small></div><div class="time"><b>${String(H).padStart(2,"0")}</b><small>HORAS</small></div><div class="time"><b>${String(M).padStart(2,"0")}</b><small>MIN</small></div><div class="time"><b>${String(S).padStart(2,"0")}</b><small>SEG</small></div>`;
+}
+tick(); setInterval(tick,1000);
+
+const flowers=["🌸","🌼","❀","✿"];
+function petal(){
+  const p=document.createElement("span");
+  p.className="petal"; p.textContent=flowers[Math.floor(Math.random()*flowers.length)];
+  p.style.left=Math.random()*100+"vw"; p.style.fontSize=(12+Math.random()*13)+"px";
+  p.style.animationDuration=(6+Math.random()*5)+"s";
+  document.body.appendChild(p); setTimeout(()=>p.remove(),12000);
+}
+setInterval(petal,1800); for(let i=0;i<5;i++) setTimeout(petal, i*450);
+
+const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(x=>observer.observe(x));
+
+function mostrarDetalles(){
+  const cont=document.getElementById("contenido");
+  cont.classList.add("open");
+  cont.querySelectorAll(".reveal").forEach(x=>observer.observe(x));
+  setTimeout(()=>{document.getElementById("evento").scrollIntoView({behavior:"smooth",block:"start"})},80);
+}
+</script>
+</body></html>
